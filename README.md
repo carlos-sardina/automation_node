@@ -31,4 +31,5 @@ Before running the project, you need to set up your environment variables:
 
 The project will log in to your Todoist account and add tasks from your Trello board.
 
-Note: Ensure that you have Node.js and npm installed on your machine.
+## Notes
+1. Ensure that you have Node.js and npm installed on your machine.

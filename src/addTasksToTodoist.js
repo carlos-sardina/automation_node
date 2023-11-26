@@ -5,6 +5,7 @@
  * @param {string[]} tasks - Array of tasks to add.
  */
 async function addTasksToTodoist(browser, page, tasks) {
+  console.log('\x1b[32m', '>> Adding tasks to Todoist...');
   try {
     await new Promise(r => setTimeout(r, 2000));
 
@@ -22,9 +23,12 @@ async function addTasksToTodoist(browser, page, tasks) {
       await new Promise(r => setTimeout(r, 500));
 
       await page.keyboard.press('Escape');
+
+      console.log('\x1b[32m', '>> Added ' + (i + 1) + ' tasks to Todoist!');
     }
+    
   } catch (error) {
-    console.error('Error adding tasks to Todoist:', error);
+    console.error('\x1b[31m', 'Error adding tasks to Todoist:', error);
   } finally {
     await browser.close();
   }

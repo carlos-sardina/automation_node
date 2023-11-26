@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer');
  * @returns {Promise<string[]>}
  */
 async function getTasksFromTrello() {
+  console.log('\x1b[32m', '>> Getting tasks from Trello...');
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -18,6 +19,7 @@ async function getTasksFromTrello() {
     return taskList;
   });
 
+  console.log('\x1b[32m', '>> Got ' + tasks.length + ' tasks from Trello!');
   await browser.close();
   return tasks;
 }
