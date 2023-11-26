@@ -12,7 +12,7 @@ async function getTasksFromTrello() {
 
     await page.goto('https://trello.com/b/QvHVksDa/personal-work-goals');
     await page.waitForSelector('a[data-testid="card-name"]');
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 3000));
 
     const tasks = await page.evaluate(() => {
       const taskElements = document.querySelectorAll('a[data-testid="card-name"]');

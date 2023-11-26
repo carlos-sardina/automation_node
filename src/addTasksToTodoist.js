@@ -7,7 +7,7 @@
 async function addTasksToTodoist(browser, page, tasks) {
   console.log('\x1b[32m', '>> Adding tasks to Todoist...');
   try {
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 5000));
 
     for (let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
