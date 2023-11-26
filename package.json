@@ -4,11 +4,12 @@
   "description": "Automation Test",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node -r dotenv/config index.js"
   },
   "author": "Carlos Sardina",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "puppeteer": "^21.5.2"
   }
 }
