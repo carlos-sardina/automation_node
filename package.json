@@ -1,0 +1,14 @@
+{
+  "name": "automation_node",
+  "version": "1.0.0",
+  "description": "Automation Test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Carlos Sardina",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^21.5.2"
+  }
+}
