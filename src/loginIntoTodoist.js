@@ -22,14 +22,27 @@ async function loginIntoTodoist(email, password) {
 
     await page.waitForSelector('button[type="submit"]');
     await page.click('button[type="submit"]');
-    await page.waitForNavigation();
+    
+    await Promise.race([
+      page.waitForNavigation(),
+      page.waitForSelector('._8f5b5f2b'),
+    ]);
+
+    const errorMessage = await page.evaluate(() => {
+      const errorElement = document.querySelector('._8f5b5f2b');
+      return errorElement ? errorElement.textContent.trim() : null;
+    });
+
+    if (errorMessage) {
+      throw new Error('Login error: ' + errorMessage);
+    }
 
     console.log('\x1b[32m', '>> Logged into Todoist!');
 
     return { browser, page };
   } catch (e) {
-    console.error('Error during login:', e);
     await browser.close();
+    throw new Error(e);
   }
 }
 

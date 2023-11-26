@@ -28,7 +28,7 @@ async function addTasksToTodoist(browser, page, tasks) {
     }
     
   } catch (error) {
-    console.error('\x1b[31m', 'Error adding tasks to Todoist:', error);
+    throw new Error('Error adding tasks to Todoist: ' + error);
   } finally {
     await browser.close();
   }
