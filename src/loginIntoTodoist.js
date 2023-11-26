@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer');
  * @returns {Promise<{browser: import('puppeteer').Browser, page: import('puppeteer').Page}>}
  */
 async function loginIntoTodoist(email, password) {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   try {
